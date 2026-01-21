@@ -1,0 +1,17 @@
+{
+  "npm": "npm",
+  "ni": "npm install",
+  "nid": "npm install --save-dev",
+  "nst": "npm start",
+  "nb": "npm run build",
+  "nrd": "npm run dev",
+  "nw": "npm run watch",
+  "npmr": "npm run",
+  "nr": "npm run",
+  "nrb": "npm run build",
+  "nrbs": "npm run build:staging",
+  "nrclean": "npm run clean",
+  "nrdebug": "npm run debug",
+  "nrp": "npm run play",
+  "nrs": "npm run start"
+}

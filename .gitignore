@@ -2,3 +2,8 @@
 sync-state.json
 sync-log*.txt
 Conflicts/
+
+powershell/Conflicts/
+powershell/Modules/
+
+tmp/

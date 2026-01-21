@@ -1,0 +1,8 @@
+{
+  "ll": "ls -la",
+  "la": "ls -la",
+  "l": "ls -lh",
+  "c": "clear",
+  "s": "source",
+  "h": "history"
+}

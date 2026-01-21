@@ -1,0 +1,18 @@
+{
+  "pt": "./vendor/bin/pest",
+  "ptc": "./vendor/bin/pest --compact",
+  "ptb": "./vendor/bin/pest --bail",
+  "ptbc": "./vendor/bin/pest --bail --compact",
+  "ptp": "./vendor/bin/pest --parallel",
+  "ptpc": "./vendor/bin/pest --parallel --compact",
+  "ptcov": "./vendor/bin/pest --coverage",
+  "ptdirty": "./vendor/bin/pest --dirty",
+  "ptfast": "./vendor/bin/pest --parallel --bail --compact",
+  "ptiso": "./vendor/bin/pest tests/Feature/IsolatedTest.php",
+  "ptindex": "./vendor/bin/pest tests/Feature/Livewire/ResourceIndexTest.php",
+  "ptform": "./vendor/bin/pest tests/Feature/Livewire/ResourceFormTest.php",
+  "p": "vendor/bin/pest",
+  "pf": "vendor/bin/pest --filter",
+  "pb": "vendor/bin/pest --bail",
+  "pest": "vendor/bin/pest"
+}

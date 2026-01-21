@@ -1,0 +1,21 @@
+{
+  "artisan": "php artisan",
+  "lwcopy": "php artisan livewire:copy",
+  "lwmove": "php artisan livewire:move",
+  "ma": "php artisan migrate",
+  "mf": "php artisan migrate:fresh",
+  "mfs": "php artisan migrate:fresh --seed",
+  "pa": "php artisan",
+  "pac": "php artisan optimize:clear",
+  "pads": "php artisan db:seed",
+  "pam": "php artisan migrate",
+  "pamf": "php artisan migrate:fresh",
+  "pamfs": "php artisan migrate:fresh --seed",
+  "parl": "php artisan route:list",
+  "parlnc": "php artisan route:list --except-path=_debugbar,livewire",
+  "pas": "php artisan serve",
+  "pas3002": "php artisan serve --port=3002",
+  "pint": "./vendor/bin/pint",
+  "serve": "php artisan serve",
+  "tinker": "php artisan tinker"
+}
