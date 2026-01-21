@@ -1,0 +1,62 @@
+{
+    "paths": {
+        "authit": {
+            "path": "$HOME/sites/nk_packages/authit",
+            "repo": "https://github.com/naykel76/authit"
+        },
+        "contactit": {
+            "path": "$HOME/sites/nk_packages/contactit",
+            "repo": "https://github.com/naykel76/contactit"
+        },
+        "devit": {
+            "path": "$HOME/sites/nk_packages/devit",
+            "repo": "https://github.com/naykel76/devit"
+        },
+        "fol": {
+            "path": "$HOME/sites/fol",
+            "alias": "fol",
+            "repo": "https://github.com/naykel76/fol_site"
+        },
+        "gt": {
+            "path": "$HOME/sites/nk_packages/gotime",
+            "alias": "gt",
+            "repo": "https://github.com/naykel76/gotime"
+        },
+        "jtb": {
+            "path": "$HOME/sites/nk_jtb",
+            "alias": "jtb",
+            "repo": "https://github.com/naykel76/nk_jtb"
+        },
+        "nbw": {
+            "path": "$HOME/sites/nbw",
+            "alias": "nbw",
+            "repo": "https://github.com/naykel76/nbw_site"
+        },
+        "nk": {
+            "path": "$HOME/sites/naykel",
+            "alias": "nk",
+            "repo": "https://github.com/naykel76/naykel_site"
+        },
+        "postit": {
+            "path": "$HOME/sites/nk_packages/postit",
+            "repo": "https://github.com/naykel76/postit"
+        },
+        "ps": {
+            "path": "$HOME/OneDrive/Documents/PowerShell",
+            "alias": "ps"
+        },
+        "sites": {
+            "path": "$HOME/sites"
+        },
+        "snippets": {
+            "path": "$HOME/AppData/Roaming/Code/User/snippets"
+        }
+    },
+    "processes": {
+        "ter": "WindowsTerminal",
+        "node": "node",
+        "es": "esbuild",
+        "con": "conhost",
+        "code": "Code"
+    }
+}

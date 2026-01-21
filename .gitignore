@@ -1,0 +1,4 @@
+.env
+sync-state.json
+sync-log*.txt
+Conflicts/
