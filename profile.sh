@@ -6,11 +6,6 @@
 
 SHELL_SCRIPTS_DIR="$HOME/shell_scripts"
 
-# Test: Simple alias
-alias ga='git add .'
-
-echo "✓ Profile loaded"
-
 # ============================================================================
 # TODO: Load configuration (paths, processes, etc)
 # ============================================================================
@@ -21,9 +16,9 @@ echo "✓ Profile loaded"
 # ============================================================================
 # TODO: Load command aliases from commands/ directory
 # ============================================================================
-# if [[ -f "$SHELL_SCRIPTS_DIR/bash/aliases.sh" ]]; then
-#     source "$SHELL_SCRIPTS_DIR/bash/aliases.sh"
-# fi
+if [[ -f "$SHELL_SCRIPTS_DIR/bash/aliases.sh" ]]; then
+    source "$SHELL_SCRIPTS_DIR/bash/aliases.sh"
+fi
 
 # ============================================================================
 # TODO: Load special functions (functions with arguments, etc)

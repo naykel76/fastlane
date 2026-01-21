@@ -4,11 +4,6 @@
 
 $ShellScriptsDir = "$HOME\shell_scripts"
 
-# Test: Simple alias
-function ga { 
-    & git "add" "."
-}
-
 # ============================================================================
 # TODO: Load configuration (paths, processes, etc)
 # ============================================================================
@@ -19,9 +14,9 @@ function ga {
 # ============================================================================
 # TODO: Load command aliases from commands/ directory
 # ============================================================================
-# if (Test-Path "$ShellScriptsDir\powershell\Aliases.ps1") {
-#     . "$ShellScriptsDir\powershell\Aliases.ps1"
-# }
+if (Test-Path "$ShellScriptsDir\powershell\Aliases.ps1") {
+    . "$ShellScriptsDir\powershell\Aliases.ps1"
+}
 
 # ============================================================================
 # TODO: Load special functions (functions with arguments, etc)

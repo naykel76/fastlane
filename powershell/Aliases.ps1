@@ -1,34 +1,31 @@
 # ============================================================================
-# PowerShell Aliases - Dynamically loaded from commands/ directory
+# PowerShell Aliases - Load from commands/ JSON files
 # ============================================================================
-# Single source of truth: all command aliases in separate JSON files
-# This script scans commands/ and creates aliases from each file
+# Creates functions for each command alias defined in JSON files
+# Functions support arguments: gr HEAD~1 → git reset HEAD~1
 
 $CommandsDir = "$HOME\shell_scripts\commands"
 
-# Check if commands directory exists
 if (-not (Test-Path $CommandsDir)) {
-    Write-Warning "commands directory not found at $CommandsDir"
+    Write-Warning "commands directory not found"
     return
 }
 
-# Loop through all JSON files in commands directory
-$CommandFiles = Get-ChildItem -Path $CommandsDir -Filter "*.json" -ErrorAction SilentlyContinue
+$jsonFiles = @(Get-ChildItem -Path $CommandsDir -Filter "*.json" -ErrorAction SilentlyContinue)
 
-foreach ($cmdFile in $CommandFiles) {
+foreach ($file in $jsonFiles) {
     try {
-        # Load and parse each JSON file
-        $Commands = Get-Content -Path $cmdFile.FullName -Raw | ConvertFrom-Json
+        $commands = Get-Content -Path $file.FullName -Raw | ConvertFrom-Json
         
-        # Loop through all commands and create aliases
-        foreach ($cmd in $Commands.PSObject.Properties) {
-            $aliasName = $cmd.Name
-            $aliasValue = $cmd.Value
+        foreach ($property in $commands.PSObject.Properties) {
+            $alias = $property.Name
+            $command = $property.Value
             
-            # Create alias
-            Set-Alias -Name $aliasName -Value $aliasValue -Force -Scope Global -ErrorAction SilentlyContinue
+            # Create a function that passes arguments
+            $scriptBlock = [scriptblock]::Create("& $command `$args")
+            New-Item -Path "function:" -Name $alias -Value $scriptBlock -Force | Out-Null
         }
     } catch {
-        Write-Warning "Error parsing $($cmdFile.Name): $_"
+        Write-Warning "Error loading $($file.Name): $_"
     }
 }
