@@ -17,7 +17,9 @@ if (Test-Path $Global:ConfigFile) {
     foreach ($alias in $config.paths.PSObject.Properties) {
         # Expand environment variables in the path
         $pathValue = $alias.Value.path
-        $expandedPath = [System.Environment]::ExpandEnvironmentVariables($pathValue)
+        # Replace $HOME with actual home directory
+        $expandedPath = $pathValue -replace '\$HOME', $HOME
+        $expandedPath = [System.Environment]::ExpandEnvironmentVariables($expandedPath)
         $Global:PathMap[$alias.Name] = $expandedPath
     }
     
