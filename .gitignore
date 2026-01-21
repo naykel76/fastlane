@@ -6,4 +6,8 @@ Conflicts/
 powershell/Conflicts/
 powershell/Modules/
 
+# Local configuration files (personal/machine-specific)
+bash/local.sh
+powershell/Local.ps1
+
 tmp/

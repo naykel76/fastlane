@@ -27,3 +27,9 @@ if [[ -f "$SHELL_SCRIPTS_DIR/bash/functions.sh" ]]; then
     source "$SHELL_SCRIPTS_DIR/bash/functions.sh"
 fi
 
+# ============================================================================
+# Load local configuration (personal aliases, not tracked in git)
+# ============================================================================
+if [[ -f "$SHELL_SCRIPTS_DIR/bash/local.sh" ]]; then
+    source "$SHELL_SCRIPTS_DIR/bash/local.sh"
+fi
