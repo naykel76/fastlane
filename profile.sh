@@ -7,11 +7,11 @@
 SHELL_SCRIPTS_DIR="$HOME/shell_scripts"
 
 # ============================================================================
-# TODO: Load configuration (paths, processes, etc)
+# Load configuration (paths, processes, etc)
 # ============================================================================
-# if [[ -f "$SHELL_SCRIPTS_DIR/bash/config.sh" ]]; then
-#     source "$SHELL_SCRIPTS_DIR/bash/config.sh"
-# fi
+if [[ -f "$SHELL_SCRIPTS_DIR/bash/config.sh" ]]; then
+    source "$SHELL_SCRIPTS_DIR/bash/config.sh"
+fi
 
 # ============================================================================
 # TODO: Load command aliases from commands/ directory
@@ -21,9 +21,9 @@ if [[ -f "$SHELL_SCRIPTS_DIR/bash/aliases.sh" ]]; then
 fi
 
 # ============================================================================
-# TODO: Load special functions (functions with arguments, etc)
+# Load special functions (functions with arguments, etc)
 # ============================================================================
-# if [[ -f "$SHELL_SCRIPTS_DIR/bash/functions.sh" ]]; then
-#     source "$SHELL_SCRIPTS_DIR/bash/functions.sh"
-# fi
+if [[ -f "$SHELL_SCRIPTS_DIR/bash/functions.sh" ]]; then
+    source "$SHELL_SCRIPTS_DIR/bash/functions.sh"
+fi
 

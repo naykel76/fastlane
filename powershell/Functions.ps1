@@ -19,6 +19,11 @@ Get-ChildItem -Path $CommandsDir -Filter "*.json" -ErrorAction SilentlyContinue 
             $functionName = $_.Name
             $commandString = $_.Value
             
+            # Skip if function name matches command exactly (prevents infinite recursion)
+            if ($functionName -eq $commandString) {
+                return
+            }
+            
             # Create function dynamically with proper escaping
             $code = @"
             param([Parameter(ValueFromRemainingArguments=`$true)]`$args)

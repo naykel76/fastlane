@@ -21,9 +21,24 @@ foreach ($file in $jsonFiles) {
             $alias = $property.Name
             $command = $property.Value
             
-            # Create a function that passes arguments
-            $scriptBlock = [scriptblock]::Create("& $command `$args")
-            New-Item -Path "function:" -Name $alias -Value $scriptBlock -Force | Out-Null
+            # Parse command to get base command
+            $parts = $command -split '\s+', 2
+            $baseCommand = $parts[0]
+            
+            # For simple commands without args, use native alias (faster)
+            if ($parts.Count -eq 1 -and $baseCommand -ne 'clear') {
+                Set-Alias -Name $alias -Value $baseCommand -Force -Scope Global
+            }
+            # Special case for 'clear' to avoid recursion
+            elseif ($baseCommand -eq 'clear') {
+                $scriptBlock = [scriptblock]::Create('Clear-Host')
+                New-Item -Path "function:" -Name $alias -Value $scriptBlock -Force | Out-Null
+            }
+            # For commands with arguments, create a function
+            else {
+                $scriptBlock = [scriptblock]::Create("& $command `$args")
+                New-Item -Path "function:" -Name $alias -Value $scriptBlock -Force | Out-Null
+            }
         }
     } catch {
         Write-Warning "Error loading $($file.Name): $_"
